@@ -1,6 +1,5 @@
 import './App.css';
 import {useEffect} from "react";
-import Button from "./components/Button/Button";
 import Header from "./components/Header/Header";
 const tg = window.Telegram.WebApp;
 function App() {
