@@ -8,4 +8,7 @@
     cursor: pointer;
     font-weight: bold;
     border-radius: 8px;
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }

@@ -1,0 +1,47 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.form .button {
+    margin-top: 8px;
+}
+
+input {
+    height: 32px;
+    border: 2px solid #FFFF66;
+    padding: 4px;
+    background-color: 	#D0D0D0;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+select {
+    padding: 4px;
+    height: 32px;
+    margin-bottom: 8px;
+    border: 2px solid #FFFF66;
+    background-color: 	#D0D0D0;
+    border-radius: 8px;
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+option {
+    height: 32px;
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+option:hover {
+    background-color: #e3e1e1;
+}

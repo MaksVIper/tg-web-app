@@ -1,6 +1,7 @@
 import './App.css';
 import {useEffect} from "react";
 import Header from "./components/Header/Header";
+import Form from "./components/Form/Form";
 const tg = window.Telegram.WebApp;
 function App() {
 
@@ -10,6 +11,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+        <Form/>
     </div>
   );
 }
