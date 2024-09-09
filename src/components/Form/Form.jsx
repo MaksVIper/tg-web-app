@@ -11,7 +11,15 @@ const Form = () => {
 
     const onSendData = useCallback(() => {
         tg.sendData(JSON.stringify(inputData));
-    }, [inputData])
+    }, [inputData]);
+
+    const onToggleButton = () => {
+        if(tg.MainButton.isVisible) {
+            tg.MainButton.hide();
+        } else {
+            tg.MainButton.show();
+        }
+    }
 
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
@@ -21,6 +29,7 @@ const Form = () => {
     }, [onSendData])
 
     useEffect(() => {
+        tg.MainButton.show();
         tg.MainButton.setParams({
             text: 'Отправить данные'
         })
