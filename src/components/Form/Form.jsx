@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import "./Form.css";
 import Button from "../Button/Button";
 const Form = () => {
@@ -8,6 +8,23 @@ const Form = () => {
         transport: {value: ''},
         name: {value: ''}
     });
+
+    const onSendData = useCallback(() => {
+        tg.sendData(JSON.stringify(inputData));
+    }, [inputData])
+
+    useEffect(() => {
+        tg.onEvent('mainButtonClicked', onSendData)
+        return () => {
+            tg.offEvent('mainButtonClicked', onSendData)
+        }
+    }, [onSendData])
+
+    useEffect(() => {
+        tg.MainButton.setParams({
+            text: 'Отправить данные'
+        })
+    }, [])
 
     const onChangeEvent = (e, name) => {
         setInputData(prevState => {
@@ -20,9 +37,7 @@ const Form = () => {
         })
     }
 
-    const sendData = () => {
-        tg.sendData(inputData);
-    }
+
     return (
         <div className="form">
             <label>Стоимость груза</label>
@@ -34,7 +49,6 @@ const Form = () => {
             </select>
             <label>Наименование груза</label>
             <input type="text" placeholder="Брусья" value={inputData.name.value} onChange={(e) => onChangeEvent(e, 'name')} />
-            <Button onClick={sendData}>Оформить</Button>
         </div>
     );
 };
